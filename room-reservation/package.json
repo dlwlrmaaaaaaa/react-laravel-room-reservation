@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.2.0",
+    "braintree": "^3.23.0",
+    "framer-motion": "^11.0.8",
+    "react-icons": "^5.0.1"
+  }
+}
