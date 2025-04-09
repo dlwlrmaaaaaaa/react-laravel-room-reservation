@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '408c89a39f01bd8902b7935cea4f801102259065',
+        'reference' => '38208fdce0b016c2624e3897590399e4603865b7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -463,7 +463,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '408c89a39f01bd8902b7935cea4f801102259065',
+            'reference' => '38208fdce0b016c2624e3897590399e4603865b7',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -515,9 +515,9 @@
             'dev_requirement' => false,
         ),
         'laravel/socialite' => array(
-            'pretty_version' => 'v5.13.0',
-            'version' => '5.13.0.0',
-            'reference' => 'a03e9b2f63d8125f61952fe4f5b75d70fd7c8286',
+            'pretty_version' => 'v5.16.0',
+            'version' => '5.16.0.0',
+            'reference' => '40a2dc98c53d9dc6d55eadb0d490d3d72b73f1bf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/socialite',
             'aliases' => array(),
@@ -565,15 +565,6 @@
             'reference' => 'f8ba6a92a5c1fdcbdd89dede009a1e6e1b93ba8c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/flysystem-aws-s3-v3',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'league/flysystem-ftp' => array(
-            'pretty_version' => '3.0.0',
-            'version' => '3.0.0.0',
-            'reference' => '2a3833d05e3abcaab926751311431065f50a493b',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../league/flysystem-ftp',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -984,8 +975,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-factory' => array(
@@ -1000,8 +991,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -1016,8 +1007,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/log' => array(
@@ -1032,8 +1023,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

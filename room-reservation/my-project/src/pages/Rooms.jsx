@@ -64,29 +64,32 @@ const Rooms = () => {
 
 
   const getImage = (item, index) => {
-    //dito kinuha ko yung images yung item and index naka set siya sa data.map(item, index) getImage(item, index);
-    //ginet ko lang yung first index sa array or json na file_name para ayun lang magdisplay sa room
+    // Get first image from JSON array
     const fileName = JSON.parse(item.file_name)[0];
-    //yung item.room_name and all the dots makikita niyo sa response, press f12 then punta kayo sa network refresh niyo yung page
-    //makikita niyo dun yung mga request
+  
     return (
       <>
         <img
           key={index}
           src={`http://localhost:8000/storage/images/${fileName}`}
-          className="object-cover w-full  rounded-xl h-3/4"
           alt={fileName}
-        ></img>
-        <h1 className="m-1 g-2 text-actText font-semibold">{item.room_name}</h1>
-        <h2 className="m-1 g-2 text-darkText font-medium">
-          {parseFloat(item.price)}
-        </h2>
-        <p className="text-gray-450 m-1 g-2 text-clip text-xs line-clamp-3">
-          {item.mini_description}
-        </p>
+          className="object-cover w-full h-40 rounded-t-xl"
+        />
+        <div className="flex flex-col items-start p-4">
+          <h1 className="text-lg font-semibold text-actText mb-1">
+            {item.room_name}
+          </h1>
+          <h2 className="text-md font-medium text-darkText mb-1">
+            ₱{parseFloat(item.price).toLocaleString()}
+          </h2>
+          <p className="text-sm text-gray-500 line-clamp-3">
+            {item.mini_description}
+          </p>
+        </div>
       </>
     );
   };
+  
 
   return (
     <>
@@ -97,38 +100,41 @@ const Rooms = () => {
               Manage Rooms{" "}
             </h1>
           </div>
-          <div className="grid sm:grid-cols-3 grid-cols-1 w-full h-screen mt-3 overflow-y-auto scrollbar-thin scrollbar-webkit">
+          <div className="grid sm:grid-cols-4 grid-cols-1 w-full h-screen mt-3 overflow-y-auto scrollbar-thin scrollbar-webkit">
             {!isLoading && <Loading height="40  " width="40" loadingHeight="40" loadingWidth="40"/>}
             {isLoading && (
               data.map((item, index) => (
                 <div
                   id="rooms"
-                  className="featured flex justify-center cursor-pointer"
+                  className="featured flex justify-center cursor-pointer lg:w-96 lg:h-1/2"
                   key={item.id}
                   onClick={() => openModal(item.id)}
                 >
-                  <div
-                    id="roomEdit"
-                    className="featured-item w-5/6 h-5/6 relative bg-white rounded-xl overflow-hidden Rounded-xl gap-5 
-                 transition-transform transfrom hover:rotate-[-3deg] hover:scale-105  shadow"
-                    key={index}
-                  >
-                    {getImage(item, index)}
-                  </div>
+                 <div
+                  id="roomEdit"
+                  key={index}
+                  className="w-5/6 h-5/6 bg-white rounded-xl overflow-hidden shadow transition-transform transform hover:rotate-[-3deg] hover:scale-105"
+                >
+                  {getImage(item, index)}
+                </div>
+
                 </div>
               ))
             ) }
 
-            <div className="flex justify-center">
-              <div
-                id="addNew"
-                onClick={() => openModal()}
-                className="w-5/6 h-5/6 relative bg-white rounded-full flex flex-col items-center cursor-pointer justify-center hover:bg-darkText hover:text-white hover:opacity-75 "
-              >
-                <FaPlus size={50} />
-                <h1 className="mt-2 font-semibold ">Add a New Room</h1>
-              </div>
+          <div
+            className="featured flex justify-center cursor-pointer lg:w-96 lg:h-1/2"
+          >
+            <div
+              id="addNew"
+              onClick={() => openModal(null)}
+              className="w-5/6 h-5/6 relative bg-white rounded-xl flex flex-col items-center justify-center shadow-md hover:shadow-lg hover:bg-darkText hover:text-white transition duration-300 transform hover:rotate-[-3deg] hover:scale-105"
+            >
+              <FaPlus size={40} />
+              <h1 className="mt-2 text-md font-semibold">Add a New Room</h1>
             </div>
+          </div>
+
             {isModalOpen && (
               <RoomModal
                 closeModal={closeModal}

@@ -99,7 +99,7 @@ const Home = () => {
                   <div className="text-sm text-gray-500 mt-1 line-clamp-2">{room.mini_description}</div>
                   <div className="text-sm text-gray-500 mt-1 line-clamp-2">{room.description}</div>
                   <div className="text-xl font-bold mt-2">₱{room.price}</div>
-                  <div className="mt-4">
+                  <div className="mt-4 p-5">
                     <button
                       className="bg-actText text-white px-4 py-2 rounded-md font-bold"
                       onClick={(e) => {
